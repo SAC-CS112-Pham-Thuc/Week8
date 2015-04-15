@@ -1,0 +1,9 @@
+public class GuessANumber 
+{
+	public static void main( String[] args )
+	{
+		RandomNumber comRandomNumber = new RandomNumber();
+		
+		comRandomNumber.GetANumber_Between_1_and_10();
+	}
+}
