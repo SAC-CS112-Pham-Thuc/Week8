@@ -1,9 +1,9 @@
 
 public class RandomNumber 
 {
-	public void GetANumber_Between_1_and_10()
+	public int GetANumber_Between_1_and_10()
 	{
 		int computerNumber = (0 + (int)( Math.random()* 10));
-		System.out.println ("Random NUMBER is " + computerNumber);
+		return computerNumber;
 	}
 }
