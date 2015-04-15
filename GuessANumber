@@ -1,9 +1,52 @@
+
+import javax.swing.JOptionPane;
+
 public class GuessANumber 
 {
 	public static void main( String[] args )
 	{
-		RandomNumber comRandomNumber = new RandomNumber();
 		
-		comRandomNumber.GetANumber_Between_1_and_10();
+		
+		
+		
+		int computerNum;
+		int player;
+		int count = 1;
+		boolean computerNumNotEqualPlayer = true;
+		boolean computerNumEqualPlayer = true;
+		
+		  
+		
+		do
+		{
+			JOptionPane.showMessageDialog(null, "Game Number: " + count); count++;
+			
+		RandomNumber comRandomNumber = new RandomNumber();
+			
+		computerNum = comRandomNumber.GetANumber_Between_1_and_10();;
+		
+		String playerinput = 
+						JOptionPane.showInputDialog( "Enter a number: ");
+
+		player = Integer.parseInt(playerinput);
+		
+		computerNumNotEqualPlayer = player < computerNum || player > computerNum;
+		computerNumEqualPlayer = computerNum == player;
+		
+		if ((computerNumNotEqualPlayer))
+			JOptionPane.showMessageDialog(null, "Incorrect Guess! Guess again!\n");
+		
+		String message = 
+				String.format( "Random number is %d \n\n", computerNum );
+		JOptionPane.showMessageDialog(null, message);
+		
+		}
+		while ((player != computerNum));
+
+			if (computerNumEqualPlayer)
+				JOptionPane.showMessageDialog(null, "Correct Guess! Player Win!\n");
+			JOptionPane.showMessageDialog(null, "Good Bye!");	
+		
 	}
 }
+
